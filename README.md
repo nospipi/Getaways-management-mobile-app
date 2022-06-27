@@ -4,7 +4,7 @@ Mobile app which provides helpfull tools in order to help organizing the workflo
 
 
 # Tech Stack
-React-native
+![](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 # App links
 
 [IOS](https://apps.apple.com/us/app/getaways-management/id1621862849)
