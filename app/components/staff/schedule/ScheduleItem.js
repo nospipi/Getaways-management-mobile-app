@@ -55,8 +55,6 @@ export const ScheduleItem = ({ isAdminPage, loadInitialTasks, data }) => {
         .map((i) => itemData.crew[i])
         .flat()
         .find((crewMember) => crewMember._id === currentUser._id).reported;
-
-  //TODO MAKE PICKUPS MODAL TO SCREEN
   return (
     <View
       style={styles.container}
@@ -70,9 +68,6 @@ export const ScheduleItem = ({ isAdminPage, loadInitialTasks, data }) => {
         setComponentWidth(event.nativeEvent.layout.width);
       }}
     >
-      {/* <View style={styles.iconContainer}>
-                <FontAwesome name="check" size={20} color="green" />
-              </View> */}
       {isLoading ? (
         <ActivityIndicator
           style={{ width: "100%" }}
@@ -353,44 +348,25 @@ const styles = StyleSheet.create({
     padding: 4,
     backgroundColor: `white`,
     borderRadius: 3,
-    // shadowColor: "black",
-    // shadowOffset: { width: -2, height: 4 },
-    // shadowOpacity: 0.2,
-    // shadowRadius: 3,
-    // elevation: 3,
     minHeight: 105,
-    //alignItems: "center",
-    //height: 140,
   },
 
   leftView: {
     flex: 1,
     flexDirection: "row",
-    //left: 10,
-    //marginRight: 2,
   },
   editView: {
-    //width: 200,
-    //flex: 1,
     flexDirection: "row",
-    // position: "absolute",
-    //backgroundColor: "#80bfff",
     borderWidth: 1,
     borderColor: "#e6e6e6",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 3,
     marginLeft: 4,
-    //paddingHorizontal: 20,
-    //paddingVertical: 10,
-    //width: 50,
-    // height: "100%",
   },
   editViewButtonContainer: {
     backgroundColor: "#f2f2f2",
     justifyContent: "center",
-    //borderWidth: 1,
-    //borderColor: "#e6e6e6",
     alignItems: "center",
     margin: 5,
     padding: 10,
@@ -406,7 +382,6 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: android ? "Roboto" : "Avenir",
     fontSize: 15,
-    //textTransform: "capitalize",
     fontWeight: "600",
   },
 });

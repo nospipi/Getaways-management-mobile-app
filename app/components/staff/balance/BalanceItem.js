@@ -12,9 +12,6 @@ import {
 } from "react-native";
 import { deleteBalanceTransaction } from "../../../../src/api/api";
 import AppContext from "../../AppContext";
-//new Date(date).toLocaleString("en-US", { month: "short" }) NOT WORKING IN ANDROID
-
-//--------------- IMPORT COMPONENTS ----------------------------
 
 //--------------------------------------------------------------
 

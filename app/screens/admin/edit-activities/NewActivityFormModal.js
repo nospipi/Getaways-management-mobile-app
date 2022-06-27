@@ -24,15 +24,9 @@ const android = Platform.OS === "android" ? true : false;
 const { width } = Dimensions.get("window");
 
 const NewActivityFormModal = () => {
-  //----------- COMPONENT STATES --------------------
-  const [isCritical, setIsCritical] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [validationError, setValidationError] = useState("");
   const appContext = useContext(AppContext);
   const dispatch = useDispatch();
-  //----------- COMPONENT FUNCTIONS -----------------
-
-  //------------- COMPONENT RETURN ----------------------------
 
   return (
     <Modal
@@ -123,13 +117,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flexDirection: "column",
     alignSelf: "center",
-    //backgroundColor: "rgb(242,242,242)",
-    //height: 170,
     width: width * 0.8,
     borderRadius: 5,
     borderWidth: 2,
     borderColor: "dodgerblue",
-    //padding: 5,
   },
   topWrapper: {
     flexDirection: "row",
@@ -147,19 +138,14 @@ const styles = StyleSheet.create({
   },
   inputWrapper: {
     flexDirection: "row",
-    //marginBottom: 2,
     height: 60,
   },
   input: {
     flex: 1,
     textAlign: "center",
-    //borderRadius: 5,
     borderColor: "#333333",
     backgroundColor: "white",
     padding: 10,
-    //borderColor: "rgba(0, 0, 0, 0.2)",
-    //borderWidth: 1,
-    //fontSize: 15,
   },
 
   labelText: {
@@ -168,32 +154,20 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     alignSelf: "center",
     fontFamily: android ? "Roboto" : "Avenir",
-    //backgroundColor: "#d9d9d9",
-    //width: "100%",
-    //textAlign: "center",
-    //padding: 5,
-    //borderTopStartRadius: 4,
-    //borderTopEndRadius: 4,
   },
   bottomWrapper: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    //width: "100%",
-    //height: 40,
-    //padding: 10,
   },
   submitBtn: {
     justifyContent: "center",
     alignItems: "center",
     flex: 2,
     backgroundColor: "#d9d9d9",
-    //borderRadius: 4,
     borderBottomLeftRadius: 4,
     borderBottomRightRadius: 4,
     height: 50,
-    //backgroundColor: "rgb(220, 220, 220)",
-    //width: "25%",
     padding: 4,
   },
 });

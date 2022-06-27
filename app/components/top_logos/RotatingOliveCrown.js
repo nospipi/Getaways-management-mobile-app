@@ -1,4 +1,7 @@
+//--------------- IMPORT MODULES ----------------------------
 import { Animated, Easing, StyleSheet } from "react-native";
+
+//------------------------------------------------------------
 
 const RotatingImg = () => {
   let rotateValueHolder = new Animated.Value(0);

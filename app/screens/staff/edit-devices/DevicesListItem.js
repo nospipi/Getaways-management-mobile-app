@@ -37,8 +37,6 @@ const DevicesListItem = ({ data }) => {
           staffMember._id === useSelector((store) => store.data.currentUser._id)
       )._id
   );
-  //console.log(data.token);
-  //console.log([...user.loggedDevices].slice(0, 1));
 
   useEffect(() => {
     return () => {
@@ -154,14 +152,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    //backgroundColor: "lightgrey",
-    //padding: 4,
-    //paddingHorizontal: 10,
     height: 60,
-    //borderRadius: 6,
     marginBottom: 2,
-    //borderBottomWidth: expanded ? 1 : null,
-    //borderBottomColor: "black",
   },
   trashContainer: {
     justifyContent: "center",
@@ -198,15 +190,6 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     textAlign: "center",
-    //borderRadius: 5,
-    //borderColor: "#333333",
-    //backgroundColor: "white",
-    //borderTopWidth: 0.5,
-    //borderBottomWidth:0.5,
-    //padding: 10,
-    //borderColor: "rgba(0, 0, 0, 0.2)",
-    //borderWidth: 0.6,
-    //fontSize: 15,
   },
 });
 

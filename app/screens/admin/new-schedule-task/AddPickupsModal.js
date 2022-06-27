@@ -27,7 +27,6 @@ const { width } = Dimensions.get("window");
 const android = Platform.OS === "android" ? true : false;
 
 const AddPickupsModal = ({ pickupData, setPickupData, setPickups }) => {
-  //----------- COMPONENT STATES --------------------
   const appContext = useContext(AppContext);
   const showMsgModal = appContext.functions.showMsgModal;
   const [mpPickedFromPicker, setMpPickedFromPicker] = useState(false);
@@ -42,10 +41,6 @@ const AddPickupsModal = ({ pickupData, setPickupData, setPickups }) => {
     }
   );
   const hasData = pickupData.hasOwnProperty("data");
-
-  //----------- COMPONENT FUNCTIONS -----------------
-
-  //------------- COMPONENT RETURN ----------------------------
 
   return (
     <Modal animationType="slide" visible={pickupData.isVisible} transparent>
@@ -100,13 +95,6 @@ const AddPickupsModal = ({ pickupData, setPickupData, setPickups }) => {
                   guests: values.guests,
                   details: values.details,
                 });
-                // console.log({
-                //   meeting_point: values.meetingPoint.value,
-                //   time: values.time,
-                //   guests: values.guests,
-                //   details: values.details,
-                // });
-
                 setPickupData({ isVisible: false });
               }
             }}
@@ -124,8 +112,6 @@ const AddPickupsModal = ({ pickupData, setPickupData, setPickups }) => {
                   style={{
                     height: 45,
                     flexDirection: "row",
-                    // borderWidth: 1,
-                    // borderColor: "grey",
                   }}
                 >
                   {mpPickedFromPicker ? null : (
@@ -134,7 +120,6 @@ const AddPickupsModal = ({ pickupData, setPickupData, setPickups }) => {
                         flex: 3,
                         marginRight: mpPickedFromInput ? 0 : 4,
                         justifyContent: "center",
-                        //alignItems: "center",
                       }}
                     >
                       <TextInput
@@ -173,7 +158,6 @@ const AddPickupsModal = ({ pickupData, setPickupData, setPickups }) => {
                             padding: 4,
                             justifyContent: "center",
                             alignItems: "center",
-                            //backgroundColor: "lightblue",
                           }}
                           onPress={() => {
                             setMpPickedFromInput(false);
@@ -242,7 +226,6 @@ const AddPickupsModal = ({ pickupData, setPickupData, setPickups }) => {
                             padding: 4,
                             justifyContent: "center",
                             alignItems: "center",
-                            //backgroundColor: "lightblue",
                           }}
                           onPress={() => {
                             setMpPickedFromPicker(false);
@@ -264,8 +247,6 @@ const AddPickupsModal = ({ pickupData, setPickupData, setPickups }) => {
                     flexDirection: "row",
                     alignItems: "center",
                     marginTop: 4,
-                    // borderWidth: 1,
-                    // borderColor: "grey",
                   }}
                 >
                   <View
@@ -306,18 +287,6 @@ const AddPickupsModal = ({ pickupData, setPickupData, setPickups }) => {
                         textAlign: "center",
                         fontSize: 16,
                       }}
-                      //isNullable
-
-                      //iosDisplay="inline"
-                      //backdropAnimation={{ opacity: 0 }}
-                      //minimumDate={new Date(Date.now())}
-                      //maximumDate={new Date(Date.now()+2000000000)}
-                      //iosMode="date"
-                      //androidMode="countdown"
-                      //iosDisplay="spinner"
-                      //androidDisplay="calendar"
-                      //androidDisplay="spinner"
-                      //locale="fr"
                     />
                     {values.time ? (
                       <Pressable
@@ -327,7 +296,6 @@ const AddPickupsModal = ({ pickupData, setPickupData, setPickups }) => {
                           padding: 4,
                           justifyContent: "center",
                           alignItems: "center",
-                          //backgroundColor: "lightblue",
                         }}
                         onPress={() => {
                           setFieldValue("time", null);
@@ -353,8 +321,6 @@ const AddPickupsModal = ({ pickupData, setPickupData, setPickups }) => {
                       ]);
                     }}
                   >
-                    {/* <Ionicons name="add" size={22} color="black" /> */}
-                    {/* <Text style={styles.text}>Add guest</Text> */}
                     <MaterialIcons name="group-add" size={28} color="black" />
                   </Pressable>
                 </View>
@@ -366,8 +332,6 @@ const AddPickupsModal = ({ pickupData, setPickupData, setPickups }) => {
                       flexDirection: "row",
                       alignItems: "center",
                       marginTop: 4,
-                      // borderWidth: 1,
-                      // borderColor: "grey",
                     }}
                     key={index}
                   >
@@ -402,7 +366,6 @@ const AddPickupsModal = ({ pickupData, setPickupData, setPickups }) => {
                             padding: 4,
                             justifyContent: "center",
                             alignItems: "center",
-                            //backgroundColor: "lightblue",
                           }}
                           onPress={() => {
                             setFieldValue(`guests[${index}].name`, "");
@@ -415,10 +378,8 @@ const AddPickupsModal = ({ pickupData, setPickupData, setPickups }) => {
                     <View
                       style={{
                         flex: 2,
-                        //justifyContent: "center",
                         alignItems: "center",
                         flexDirection: "row",
-                        //backgroundColor: "red",
                       }}
                     >
                       <Picker
@@ -507,8 +468,6 @@ const AddPickupsModal = ({ pickupData, setPickupData, setPickups }) => {
                     marginTop: 4,
                     justifyContent: "center",
                     alignItems: "center",
-                    // borderWidth: 1,
-                    // borderColor: "grey",
                   }}
                 >
                   <TextInput
@@ -526,20 +485,16 @@ const AddPickupsModal = ({ pickupData, setPickupData, setPickups }) => {
                       style={{
                         flex: 1,
                         justifyContent: "center",
-                        //alignItems: "center",
                       }}
                     >
                       <Pressable
                         style={{
-                          // position: "absolute",
-                          // left: "90%",
                           flex: 1,
                           padding: 4,
                           justifyContent: "center",
                           alignItems: "center",
                           backgroundColor: "rgb(235, 235, 235)",
                           alignItems: "center",
-                          //backgroundColor: "lightblue",
                         }}
                         onPress={() => {
                           setFieldValue("details", null);
@@ -618,11 +573,9 @@ const styles = StyleSheet.create({
   textInput: {
     flex: 1,
     textAlign: "center",
-    // borderRadius: 4,
     backgroundColor: "rgb(235, 235, 235)",
     padding: 10,
     borderColor: "rgba(0, 0, 0, 0.2)",
-    //borderWidth: 1,
     fontSize: 18,
     height: "100%",
     color: "grey",
@@ -630,7 +583,6 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: android ? "Roboto" : "Avenir",
     fontSize: 15,
-    //textTransform: "capitalize",
     fontWeight: "600",
     justifyContent: "center",
     alignItems: "center",
@@ -641,20 +593,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 4,
     height: 50,
-    //width: "100%",
-    //height: 40,
-    //padding: 10,
   },
   clearBtn: {
     justifyContent: "center",
     alignItems: "center",
     flex: 1,
     backgroundColor: "#d9d9d9",
-    //borderRadius: 4,
-    //borderRightWidth: 1,
     borderColor: "whitesmoke",
     borderBottomLeftRadius: 4,
-    //borderBottomRightRadius: 4,
     height: "100%",
   },
   clearText: {
@@ -669,13 +615,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flex: 2,
     backgroundColor: "#bfbfbf",
-    //borderRadius: 4,
-    //borderBottomLeftRadius: 4,
     borderBottomRightRadius: 4,
     height: "100%",
-    //backgroundColor: "rgb(220, 220, 220)",
-    //width: "25%",
-    //padding: 4,
   },
   ghostIcon: {
     opacity: 0,

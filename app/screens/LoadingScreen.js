@@ -37,13 +37,9 @@ const LoadingScreen = (props) => {
       backgroundColor: "#a593a0",
       justifyContent: "center",
       alignItems: "center",
-      //marginTop: android ? StatusBar.currentHeight + 10 : 10, //for ios its under SafeAreaView
     },
     logo: {
       transform: [{ rotate: RotateData }],
-      //backgroundColor: "red",
-      // shadowOpacity: 0.4,
-      // shadowOffset: { width: 0, height: 2 },
       tintColor: "#fffaeb",
       width: 55,
       height: 55,

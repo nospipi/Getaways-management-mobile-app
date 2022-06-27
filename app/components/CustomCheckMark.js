@@ -1,5 +1,9 @@
+//--------------- IMPORT MODULES ----------------------------
+
 import LottieView from "lottie-react-native";
 import { StyleSheet } from "react-native";
+
+//--------------------------------------------------------------
 
 const CustomCheckMark = ({ visible = false, width, height, speed }) => {
   const styles = StyleSheet.create({
@@ -9,7 +13,6 @@ const CustomCheckMark = ({ visible = false, width, height, speed }) => {
       alignSelf: "center",
       justifyContent: "center",
       alignContent: "center",
-      //backgroundColor: "red",
     },
   });
 

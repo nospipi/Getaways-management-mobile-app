@@ -13,18 +13,12 @@ import {
 } from "react-native";
 import { useSelector } from "react-redux";
 import * as constants from "../../constants";
-
-//---------------- IMPORT COMPONENTS --------------------------
-
 import LoadingScreen from "./LoadingScreen";
-
 import CustomBottomMsgModal from "../components/CustomBottomMsgModal";
 import DropdownSelectList from "../components/DropdownSelectList";
 import { BalanceItem } from "../components/staff/balance/BalanceItem";
 import BalanceReceiptModal from "../components/staff/balance/BalanceReceiptModal";
 import NewBalanceTransactionFormModal from "../components/staff/balance/NewBalanceTransactionFormModal";
-
-//---------------- IMPORT FUNCTIONS --------------------------
 import { ADMIN_ID } from "../../constants";
 import { fetchBalanceData, getBalanceTotals } from "../../src/api/api";
 
@@ -62,16 +56,6 @@ const BalanceScreen = () => {
     staff: false,
     actions: false,
   });
-  const [dropdownMeasurements, setDropdownMeasurements] = useState({
-    top: 0,
-    left: 0,
-    height: 0,
-    width: 0,
-  });
-  const [staffDropdownText, setStaffDropdownText] = useState(
-    "Select a staff member.."
-  );
-
   //------------------------------------------------------------------------
 
   const handleDropdownsVisibility = (dropdownName) => {
@@ -477,12 +461,9 @@ const styles = StyleSheet.create({
   OuterContainer: {
     flex: 1,
     backgroundColor: "#a593a0",
-    //marginTop: android ? StatusBar.currentHeight + 10 : 10, //for ios its under SafeAreaView
   },
   InnerContainer: {
-    //backgroundColor: "red",
     justifyContent: "flex-start",
-    //alignItems: "flex-start",
     padding: 10,
     flex: 1,
   },
@@ -491,9 +472,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#e6e6e6",
-    ///borderWidth: 1,
     height: 70,
-    //padding: 5,
     borderRadius: 4,
     marginBottom: 5,
   },
@@ -516,18 +495,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     position: "absolute",
-    //borderWidth: 2,
   },
   listContainer: {
     flex: 1,
     justifyContent: "center",
-    //marginTop: 5,
   },
   naviconContainer: {
     backgroundColor: "#e6e6e6",
     justifyContent: "center",
     alignItems: "center",
-    //borderRadius: 4,
     borderTopRightRadius: 4,
     borderBottomRightRadius: 4,
     flex: 1,
@@ -538,29 +514,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 5,
-    //backgroundColor: "grey",
-    //borderTopWidth: 1,
-    //borderWidth: 2,
     borderColor: "darkgrey",
     height: 45,
-    // padding: 10,
-    //width: width / 2,
-    //alignSelf: "center",
     borderRadius: 5,
-    //borderTopLeftRadius: 5,
-    //marginTop: 2,
-    //borderBottomLeftRadius: 3,
-    //borderBottomRightRadius: 3,
   },
   loadMoreWrapperText: {
     color: "whitesmoke",
     fontFamily: android ? "Roboto" : "Avenir",
     fontSize: 15,
     fontWeight: "700",
-    // shadowColor: "black",
-    // shadowOffset: { width: 2, height: 4 },
-    // shadowOpacity: 0.6,
-    // shadowRadius: 5,
   },
   buttonContainer: {
     height: "100%",
@@ -584,22 +546,16 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     fontFamily: android ? "Roboto" : "Avenir",
     fontSize: 14,
-    //opacity: 0.8,
-    //textTransform: "capitalize",
   },
   inputSearchStyle: {
     borderWidth: 0.5,
     borderColor: "#DDDDDD",
     paddingHorizontal: 10,
     marginBottom: 5,
-    //margin: 6,
     height: 40,
     color: "black",
-    //alignSelf: "center",
     fontFamily: android ? "Roboto" : "Avenir",
     fontSize: 14,
-    //opacity: 0.8,
-    //textTransform: "capitalize",
   },
   items: {
     backgroundColor: "rgb(235, 235, 235)",

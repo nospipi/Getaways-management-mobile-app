@@ -4,7 +4,6 @@ import {
   MaterialCommunityIcons,
   MaterialIcons,
 } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
 import _ from "lodash";
 import moment from "moment-timezone";
 import { useContext } from "react";
@@ -42,12 +41,6 @@ const PickupsScreen = ({ route }) => {
     .map((pickup) => pickup.meeting_point)
     .join("/");
 
-  //single `https://www.google.com.sa/maps/search/${item.meeting_point}?hl=en`
-  //works for many stops --> https://www.google.com/maps/dir//${mapSearchLocations}
-
-  //----------- COMPONENT STATES --------------------
-  const navigation = useNavigation();
-  //TODO MAKE PICKUPS ITEM LIKE IN SCHEDULE TASK
   const onPressMobileNumberClick = (number) => {
     let phoneNumber = "";
     if (android) {

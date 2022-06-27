@@ -26,20 +26,11 @@ import AppContext from "../../../components/AppContext";
 const android = Platform.OS === "android" ? true : false;
 const { width } = Dimensions.get("window");
 
-// const ValidationSchema = Yup.object().shape({
-//   message: Yup.string().min(2, "Too Short!").required("Required"),
-// });
-
 const NewAnnouncementFormModal = () => {
-  //----------- COMPONENT STATES --------------------
   const [isCritical, setIsCritical] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const appContext = useContext(AppContext);
   const dispatch = useDispatch();
-  //----------- COMPONENT FUNCTIONS -----------------
-
-  //------------- COMPONENT RETURN ----------------------------
-
   return (
     <Modal
       animationType="slide"
@@ -68,7 +59,6 @@ const NewAnnouncementFormModal = () => {
                 setIsLoading(false);
               });
             }}
-            //ValidationSchema={ValidationSchema}
           >
             {({ handleChange, handleSubmit, errors }) => (
               <>
@@ -87,7 +77,6 @@ const NewAnnouncementFormModal = () => {
                 </View>
 
                 <TextInput
-                  // name="message"
                   autoFocus
                   style={styles.textArea}
                   multiline={true}
@@ -159,8 +148,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flexDirection: "column",
     alignSelf: "center",
-    //backgroundColor: "rgb(242,242,242)",
-    //height: 170,
     width: width * 0.8,
     borderRadius: 4,
     borderWidth: 2,
@@ -187,10 +174,6 @@ const styles = StyleSheet.create({
     height: 200,
     textAlignVertical: "top",
     backgroundColor: "hsl(0, 0%, 92%)",
-    //borderBottomEndRadius: 4,
-    //borderBottomStartRadius: 4,
-    //borderWidth: 1,
-    //borderColor: "grey",
     width: "100%",
     padding: 6,
     marginBottom: 2,
@@ -205,57 +188,39 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     alignSelf: "center",
     fontFamily: android ? "Roboto" : "Avenir",
-    //backgroundColor: "#d9d9d9",
-    //width: "100%",
-    //textAlign: "center",
-    //padding: 5,
-    //borderTopStartRadius: 4,
-    //borderTopEndRadius: 4,
   },
   bottomWrapper: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    //width: "100%",
-    //height: 40,
-    //padding: 10,
   },
   checkboxWrapper: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "hsl(0, 0%, 93%)",
-    //borderRadius: 4,
     borderBottomLeftRadius: 4,
-    //borderBottomRightRadius: 4,
     flex: 4,
     height: 50,
     marginEnd: 2,
-    //backgroundColor: "lightgrey",
     padding: 4,
   },
   checkbox: {
     alignSelf: "center",
-    //marginStart: 20,
   },
   checkBoxLabelText: {
     color: "#262626",
     fontSize: 19,
     fontWeight: "600",
     fontFamily: android ? "Roboto" : "Avenir",
-    //marginStart: 10,
   },
   submitBtn: {
     justifyContent: "center",
     alignItems: "center",
     flex: 2,
     backgroundColor: "hsl(0, 0%, 93%)",
-    //borderRadius: 4,
-    //borderBottomLeftRadius: 4,
     borderBottomRightRadius: 4,
     height: 50,
-    //backgroundColor: "rgb(220, 220, 220)",
-    //width: "25%",
     padding: 4,
   },
 });

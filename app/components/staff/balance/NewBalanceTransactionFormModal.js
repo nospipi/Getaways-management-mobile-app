@@ -38,13 +38,11 @@ const { width } = Dimensions.get("window");
 const android = Platform.OS === "android" ? true : false;
 
 const NewBalanceTransactionFormModal = ({ loadTransactions }) => {
-  //----------- COMPONENT STATES --------------------
   const [isSavingNoReceipt, setIsSavingNoReceipt] = useState(false);
   const [isSavingWithReceipt, setIsSavingWithReceipt] = useState(false);
   const [loadingProgressText, setLoadingProgressText] = useState("Preparing..");
   const [uploadingImageProgress, setUploadingImageProgress] = useState(0);
   const [uploadingImageSucceded, setUploadingImageSucceded] = useState(false);
-  //------------------------------------------------
   const appContext = useContext(AppContext);
   const currentUser = useSelector((store) => store.data.currentUser);
   const store = useSelector((store) => store);
@@ -166,7 +164,6 @@ const NewBalanceTransactionFormModal = ({ loadTransactions }) => {
                     setIsSavingWithReceipt(false);
                   }, 1500);
                 });
-                //console.log(values);
               }
             }}
           >
@@ -248,14 +245,7 @@ const NewBalanceTransactionFormModal = ({ loadTransactions }) => {
                           setFieldValue("name", data.label);
                           setFieldValue("id", data.value);
                         }}
-                        //onDonePress={(data) => setSelectedMember(1)}
-                        //placeholder={"Select a member.."}
-                        //isNullable
-                        //backdropAnimation={{ opacity: 0 }}
-                        //mode="dropdown"
-                        //disable
                         touchableStyle={{
-                          //backgroundColor: "indianred",
                           height: 20,
                         }}
                         textInputStyle={{
@@ -264,15 +254,8 @@ const NewBalanceTransactionFormModal = ({ loadTransactions }) => {
                             values.name === null
                               ? "#bfbfbf"
                               : "black",
-                          //backgroundColor: "grey",
-                          // justifyContent: "center",
-                          // alignItems: "center",
-                          // alignSelf: "center",
-                          // alignContent: "center",
-                          // textAlignVertical: "bottom",
                           fontSize: 15,
                           fontFamily: android ? "Roboto" : "Avenir",
-                          //height: "100%",
                         }}
                       />
                     </View>
@@ -299,35 +282,15 @@ const NewBalanceTransactionFormModal = ({ loadTransactions }) => {
                           : "Pick a date.."
                       }
                       touchableStyle={{
-                        // justifyContent: "center",
-                        // alignItems: "center",
-                        // backgroundColor: "indianred",
                         height: 20,
                       }}
                       textInputStyle={{
                         color: values.date ? "black" : "#bfbfbf",
-                        // backgroundColor: "grey",
-                        // justifyContent: "center",
-                        // alignItems: "center",
-                        // alignSelf: "center",
-                        // alignContent: "center",
-                        // textAlignVertical: "bottom",
                         fontSize: 15,
                         fontFamily: android ? "Roboto" : "Avenir",
                         //height: "100%",
                       }}
                       isNullable={false}
-
-                      //iosDisplay="inline"
-                      //backdropAnimation={{ opacity: 0 }}
-                      //minimumDate={new Date(Date.now())}
-                      //maximumDate={new Date(Date.now()+2000000000)}
-                      //iosMode="date"
-                      //androidMode="countdown"
-                      //iosDisplay="spinner"
-                      //androidDisplay="calendar"
-                      //androidDisplay="spinner"
-                      //locale="fr"
                     />
                   </View>
                 </View>
@@ -360,16 +323,7 @@ const NewBalanceTransactionFormModal = ({ loadTransactions }) => {
                         { label: "Expense", value: "expense" },
                       ]}
                       onItemChange={(data) => setFieldValue("type", data.value)}
-                      //onDonePress={(data) => setSelectedMember(1)}
-                      //placeholder={"Select a member.."}
-                      //isNullable
-                      //backdropAnimation={{ opacity: 0 }}
-                      //mode="dropdown"
-                      //disable
                       touchableStyle={{
-                        // justifyContent: "center",
-                        // alignItems: "center",
-                        // backgroundColor: "indianred",
                         height: 20,
                       }}
                       textInputStyle={{
@@ -378,15 +332,9 @@ const NewBalanceTransactionFormModal = ({ loadTransactions }) => {
                           values.type === null
                             ? "#bfbfbf"
                             : "black",
-                        // backgroundColor: "grey",
-                        // justifyContent: "center",
-                        // alignItems: "center",
-                        // alignSelf: "center",
-                        // alignContent: "center",
-                        // textAlignVertical: "bottom",
+
                         fontSize: 15,
                         fontFamily: android ? "Roboto" : "Avenir",
-                        //height: "100%",
                       }}
                     />
                   </View>
@@ -523,8 +471,6 @@ const NewBalanceTransactionFormModal = ({ loadTransactions }) => {
           </Formik>
         </View>
       </KeyboardAvoidingView>
-
-      {/* <View style={styles.ghost}></View> */}
     </Modal>
   );
 };
@@ -541,15 +487,9 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.2)",
   },
   modalView: {
-    //alignItems: "center",
-    //justifyContent: "center",
-
     alignSelf: "center",
-    //backgroundColor: "rgb(242,242,242)",
-    //height: 170,
     width: width * 0.8,
     borderRadius: 4,
-    //padding: 5,
     borderWidth: 2,
     borderColor: "dodgerblue",
   },
@@ -580,15 +520,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     textAlign: "center",
-    //borderRadius: 5,
     borderColor: "#333333",
-    //backgroundColor: "white",
-    //borderTopWidth: 0.5,
-    //borderBottomWidth:0.5,
-    //padding: 10,
-    //borderColor: "rgba(0, 0, 0, 0.2)",
-    //borderWidth: 0.6,
-    //fontSize: 15,
   },
   labelText: {
     color: "#262626",
@@ -596,32 +528,20 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     alignSelf: "center",
     fontFamily: android ? "Roboto" : "Avenir",
-    //backgroundColor: "#bfbfbf",
-    //width: "100%",
-    //textAlign: "center",
-    //padding: 5,
-    //borderTopStartRadius: 4,
-    //borderTopEndRadius: 4,
   },
   bottomWrapper: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     height: 50,
-    //width: "100%",
-    //height: 40,
-    //padding: 10,
   },
   clearBtn: {
     justifyContent: "center",
     alignItems: "center",
     flex: 1,
     backgroundColor: "#d9d9d9",
-    //borderRadius: 4,
-    //borderRightWidth: 1,
     borderColor: "whitesmoke",
     borderBottomLeftRadius: 4,
-    //borderBottomRightRadius: 4,
     height: "100%",
   },
   clearText: {
@@ -636,13 +556,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flex: 2,
     backgroundColor: "#bfbfbf",
-    //borderRadius: 4,
-    //borderBottomLeftRadius: 4,
     borderBottomRightRadius: 4,
     height: "100%",
-    //backgroundColor: "rgb(220, 220, 220)",
-    //width: "25%",
-    //padding: 4,
   },
 });
 

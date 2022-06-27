@@ -16,8 +16,6 @@ import { useDispatch } from "react-redux";
 import { deleteActivity, editActivity } from "../../../../src/api/api";
 import AppContext from "../../../components/AppContext";
 
-//--------------- IMPORT COMPONENTS ----------------------------
-
 //--------------------------------------------------------------
 
 const android = Platform.OS === "android" ? true : false;

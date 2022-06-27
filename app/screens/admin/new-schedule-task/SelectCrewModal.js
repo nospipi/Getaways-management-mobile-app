@@ -1,8 +1,8 @@
 //--------------- IMPORT MODULES ----------------------------
 
 import { AntDesign } from "@expo/vector-icons";
-import { useContext, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
 import {
   Dimensions,
@@ -14,7 +14,6 @@ import {
   View,
 } from "react-native";
 import * as constants from "../../../../constants";
-import AppContext from "../../../components/AppContext";
 import DropdownMultiSelect from "../../../components/DropdownMultiSelect";
 
 //--------------------------------------------------------------
@@ -31,7 +30,6 @@ const SelectCrewModal = ({
   selectedGuides,
 }) => {
   //----------- COMPONENT STATES --------------------
-  const [isLoading, setIsLoading] = useState(false);
   const [expandedDropdowns, setExpandedDropdowns] = useState({
     1: false,
     2: false,
@@ -45,7 +43,6 @@ const SelectCrewModal = ({
     newExpandedDropdowns[id] = state; //change given id to given value
     setExpandedDropdowns(newExpandedDropdowns); //set original state to new state
   };
-  const appContext = useContext(AppContext);
   const store = useSelector((store) => store);
   const drivers = store.data.entities.staff
     .filter(
@@ -74,11 +71,6 @@ const SelectCrewModal = ({
     .map((staffMember) => {
       return { label: staffMember.name, value: staffMember._id };
     });
-  const dispatch = useDispatch();
-
-  //----------- COMPONENT FUNCTIONS -----------------
-
-  //------------- COMPONENT RETURN ----------------------------
 
   return (
     <Modal animationType="slide" visible={visible} transparent>

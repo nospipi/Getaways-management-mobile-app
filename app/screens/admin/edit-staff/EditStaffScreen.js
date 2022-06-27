@@ -1,7 +1,6 @@
 //--------------- IMPORT MODULES ----------------------------
 
-import { useNavigation } from "@react-navigation/native";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import {
   FlatList,
   KeyboardAvoidingView,
@@ -9,27 +8,15 @@ import {
   StyleSheet,
   View,
 } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
-
-//---------------- IMPORT COMPONENTS --------------------------
-
-import AppContext from "../../../components/AppContext";
+import { useSelector } from "react-redux";
 import CustomBottomMsgModal from "../../../components/CustomBottomMsgModal";
 import EditStaffListItem from "./EditStaffListItem";
 import NewStaffMemberFormModal from "./NewStaffMemberFormModal";
 
-//---------------- IMPORT FUNCTIONS --------------------------
-
 //------------------------------------------------------------
 
 const EditStaffScreen = () => {
-  const navigation = useNavigation();
-  const routes = navigation.getState().routeNames;
-  const dispatch = useDispatch();
-  const isLoading = useSelector((store) => store.data.isLoading);
-  const appContext = useContext(AppContext);
   const staff = useSelector((store) => store.data.entities.staff);
-  const [isModalVisible, setIsModalVisible] = useState(false);
 
   //-------------- ONLY ONE STAFF MEMBER COMPONENT IS "EXPANDED" AT ONCE ---------
   const [expandedStaff, setExpandedStaff] = useState(
@@ -93,10 +80,8 @@ const styles = StyleSheet.create({
   OuterContainer: {
     flex: 1,
     backgroundColor: "#a593a0",
-    //marginTop: android ? StatusBar.currentHeight + 10 : 10, //for ios its under SafeAreaView
   },
   InnerContainer: {
-    //backgroundColor: "red",
     padding: 6,
     flex: 1,
   },

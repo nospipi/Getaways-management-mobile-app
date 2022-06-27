@@ -21,7 +21,6 @@ const android = Platform.OS === "android" ? true : false;
 const { width } = Dimensions.get("window");
 
 const CustomAdminModal = () => {
-  //----------- COMPONENT STATES --------------------
   const navigation = useNavigation();
 
   const {

@@ -1,5 +1,8 @@
+//--------------- IMPORT MODULES ----------------------------
 import { Image, StyleSheet, View } from "react-native";
 import RotatingOliveCrown from "./RotatingOliveCrown";
+
+//-----------------------------------------------------------
 
 export default function topLogoContainer(props) {
   return (
@@ -19,7 +22,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginVertical: 30,
-    //backgroundColor: "blue",
   },
   logo: {
     marginLeft: 10,
@@ -28,6 +30,5 @@ const styles = StyleSheet.create({
     width: 160,
     height: 90,
     resizeMode: "contain",
-    //backgroundColor: "red",
   },
 });

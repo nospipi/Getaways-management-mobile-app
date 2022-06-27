@@ -12,15 +12,12 @@ import { FlatList } from "react-native-gesture-handler";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 
-//--------------- IMPORT COMPONENTS ----------------------------
-
 import AnnouncementsListItem from "./AnnouncementListItem";
 import { fetchEntities } from "../../../../src/api/api";
 
 //--------------------------------------------------------------
 
 const AnnouncementsContainer = () => {
-  //const isLoading = useSelector((store) => store.data.isLoading);
   const dispatch = useDispatch();
   const announcements = useSelector(
     (store) => store.data.entities.announcements
@@ -65,13 +62,6 @@ const ios = Platform.OS === "ios" ? true : false;
 const android = Platform.OS === "android" ? true : false;
 const styles = StyleSheet.create({
   container: {
-    //justifyContent: "flex-end",
-    //alignItems: "center",
-    //borderWidth: 0.2,
-    //borderColor: "lightgrey",
-    //borderRadius: 6,
-
-    //backgroundColor: "rgb(135, 115, 130)",
     flexShrink: 1,
     height: "auto",
   },
@@ -83,7 +73,6 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     letterSpacing: 3,
     marginBottom: 5,
-    //textDecorationLine: "underline",
   },
 });
 

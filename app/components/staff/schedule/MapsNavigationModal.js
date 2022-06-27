@@ -26,20 +26,9 @@ const android = Platform.OS === "android" ? true : false;
 const MapsNavigationModal = ({ visible, hideModal, pickups }) => {
   //----------- COMPONENT STATES --------------------
 
-  const navigation = useNavigation();
-  const dispatch = useDispatch();
-  const store = useSelector((store) => store);
-  const appContext = useContext(AppContext);
   const mapSearchLocations = pickups
     .map((pickup) => pickup.meeting_point)
     .join("/");
-
-  //single `https://www.google.com.sa/maps/search/${item.meeting_point}?hl=en`
-  //works for many stops --> https://www.google.com/maps/dir//${mapSearchLocations}
-
-  //----------- COMPONENT FUNCTIONS -----------------
-
-  //------------- COMPONENT RETURN ----------------------------
 
   return (
     <Modal

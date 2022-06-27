@@ -16,8 +16,6 @@ import { useDispatch } from "react-redux";
 import { deleteVehicle, editVehicle } from "../../../../src/api/api";
 import AppContext from "../../../components/AppContext";
 
-//--------------- IMPORT COMPONENTS ----------------------------
-
 //--------------------------------------------------------------
 
 const android = Platform.OS === "android" ? true : false;
@@ -32,12 +30,10 @@ const EditVehicleListItem = ({ data, expanded, setNewExpandedState }) => {
     container: {
       alignItems: "center",
       backgroundColor: !expanded ? "lightgrey" : null,
-      //padding: 4,
       paddingHorizontal: !expanded ? 5 : null,
       height: !expanded ? 60 : null,
       borderRadius: !expanded ? 6 : null,
       marginBottom: 2,
-      //borderBottomWidth: expanded ? 1 : null,
       borderBottomColor: "black",
     },
     topContainer: {
@@ -47,7 +43,6 @@ const EditVehicleListItem = ({ data, expanded, setNewExpandedState }) => {
       padding: expanded ? 10 : null,
       alignItems: "center",
       height: expanded ? 60 : null,
-      //borderWidth: expanded ? 1 : null,
       borderColor: "#333333",
       marginBottom: expanded ? 2 : null,
       backgroundColor: expanded ? "white" : null,
@@ -61,13 +56,10 @@ const EditVehicleListItem = ({ data, expanded, setNewExpandedState }) => {
       alignSelf: "center",
       fontFamily: android ? "Roboto" : "Avenir",
       color: "#1a1a00",
-      //marginBottom: 5,
     },
     form: {
-      //borderWidth: 2,
       borderColor: "grey",
       borderRadius: 5,
-      //padding: 5,
       width: "100%",
     },
     devicesContainer: {},
@@ -86,7 +78,6 @@ const EditVehicleListItem = ({ data, expanded, setNewExpandedState }) => {
       alignSelf: "flex-start",
       fontFamily: android ? "Roboto" : "Avenir",
       color: "#1a1a00",
-      //textDecorationLine: "underline",
     },
     deviceItemContainer: {
       flexDirection: "row",
@@ -129,13 +120,9 @@ const EditVehicleListItem = ({ data, expanded, setNewExpandedState }) => {
     input: {
       flex: 1,
       textAlign: "center",
-      //borderRadius: 5,
       borderColor: "#333333",
       backgroundColor: "white",
       padding: 10,
-      //borderColor: "rgba(0, 0, 0, 0.2)",
-      //borderWidth: 1,
-      //fontSize: 15,
     },
     icons: {
       flexDirection: "row",
@@ -147,7 +134,6 @@ const EditVehicleListItem = ({ data, expanded, setNewExpandedState }) => {
       justifyContent: "center",
       alignItems: "center",
       backgroundColor: "white",
-      //borderWidth: 1,
       borderColor: "#333333",
       borderBottomLeftRadius: 6,
       height: "100%",
@@ -156,8 +142,6 @@ const EditVehicleListItem = ({ data, expanded, setNewExpandedState }) => {
     },
 
     cancelContainer: {
-      //borderWidth: 1,
-      //borderRadius: 2,
       justifyContent: "center",
       alignItems: "center",
       height: "100%",
@@ -173,8 +157,6 @@ const EditVehicleListItem = ({ data, expanded, setNewExpandedState }) => {
       color: "#1a1a00",
     },
     checkContainer: {
-      //borderWidth: 1,
-      //borderRadius: 2,
       justifyContent: "center",
       alignItems: "center",
       height: "100%",
@@ -189,11 +171,6 @@ const EditVehicleListItem = ({ data, expanded, setNewExpandedState }) => {
       setDeleteIsLoading(false);
     };
   }, []);
-  // cleanup operation,because when a user is deleted the component is unmounted before deleteIsLoading is set back to false
-  // The return function from the useEffect() hook is called when the component is unmounted
-  // https://jasonwatmore.com/post/2021/08/27/react-how-to-check-if-a-component-is-mounted-or-unmounted
-  // https://dev.to/robmarshall/how-to-use-componentwillunmount-with-functional-components-in-react-2a5g
-
   return (
     <TouchableWithoutFeedback
       onPress={() => {

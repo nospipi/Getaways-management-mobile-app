@@ -16,16 +16,11 @@ import { useSelector } from "react-redux";
 import * as constants from "../../constants";
 import { useDidMountEffect } from "../../customHooks";
 import AppContext from "../components/AppContext";
-
-//---------------- IMPORT COMPONENTS --------------------------
-
 import CustomBottomMsgModal from "../components/CustomBottomMsgModal";
 import DropdownSelectList from "../components/DropdownSelectList";
 import { ScheduleItem } from "../components/staff/schedule/ScheduleItem";
 import ShowByDateSelectionModal from "../components/staff/schedule/ShowByDateSelectionModal";
 import LoadingScreen from "./LoadingScreen";
-
-//---------------- IMPORT FUNCTIONS --------------------------
 import { fetchScheduleData } from "../../src/api/api";
 
 //------------------------------------------------------------
@@ -33,7 +28,6 @@ import moment from "moment-timezone";
 import { ADMIN_ID } from "../../constants";
 
 const android = Platform.OS === "android" ? true : false;
-//TODO FIX issue where query with result returns no results after a query with no results
 const ScheduleScreen = () => {
   const flatlistRef = useRef();
   const [isComponentLoading, setIsComponentLoading] = useState(true);
@@ -325,12 +319,9 @@ const styles = StyleSheet.create({
   OuterContainer: {
     flex: 1,
     backgroundColor: "#a593a0",
-    //marginTop: android ? StatusBar.currentHeight + 10 : 10, //for ios its under SafeAreaView
   },
   InnerContainer: {
-    //backgroundColor: "red",
     justifyContent: "flex-start",
-    //alignItems: "flex-start",
     padding: 10,
     flex: 1,
   },
@@ -339,9 +330,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#e6e6e6",
-    ///borderWidth: 1,
     height: 70,
-    //padding: 5,
     borderRadius: 4,
     marginBottom: 5,
   },
@@ -364,19 +353,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     position: "absolute",
-    //borderWidth: 2,
   },
   listContainer: {
     flex: 1,
     justifyContent: "center",
-    //alignItems: "flex-end",
-    //marginTop: 5,
   },
   naviconContainer: {
     backgroundColor: "#e6e6e6",
     justifyContent: "center",
     alignItems: "center",
-    //borderRadius: 4,
     borderTopRightRadius: 4,
     borderBottomRightRadius: 4,
     flex: 1,
@@ -387,29 +372,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 5,
-    //backgroundColor: "grey",
-    //borderTopWidth: 1,
-    //borderWidth: 2,
     borderColor: "darkgrey",
     height: 45,
-    // padding: 10,
-    //width: width / 2,
-    //alignSelf: "center",
     borderRadius: 5,
-    //borderTopLeftRadius: 5,
-    //marginTop: 2,
-    //borderBottomLeftRadius: 3,
-    //borderBottomRightRadius: 3,
   },
   loadMoreWrapperText: {
     color: "whitesmoke",
     fontFamily: android ? "Roboto" : "Avenir",
     fontSize: 15,
     fontWeight: "700",
-    // shadowColor: "black",
-    // shadowOffset: { width: 2, height: 4 },
-    // shadowOpacity: 0.6,
-    // shadowRadius: 5,
   },
   buttonContainer: {
     height: "100%",
@@ -433,22 +404,16 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     fontFamily: android ? "Roboto" : "Avenir",
     fontSize: 14,
-    //opacity: 0.8,
-    //textTransform: "capitalize",
   },
   inputSearchStyle: {
     borderWidth: 0.5,
     borderColor: "#DDDDDD",
     paddingHorizontal: 10,
     marginBottom: 5,
-    //margin: 6,
     height: 40,
     color: "black",
-    //alignSelf: "center",
     fontFamily: android ? "Roboto" : "Avenir",
     fontSize: 14,
-    //opacity: 0.8,
-    //textTransform: "capitalize",
   },
   items: {
     backgroundColor: "rgb(235, 235, 235)",

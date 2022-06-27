@@ -12,11 +12,8 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { retrieveData } from "../../src/asyncStorageFunctions";
 import AppContext from "./AppContext";
-//---------------- IMPORT FUNCTIONS --------------------------
 
 import { SET_LOGGED_AS } from "../../src/store/store";
-
-//----------------- IMPORT SCREENS ----------------------------
 
 import { ADMIN_ID } from "../../constants";
 import EditActivityScreen from "../screens/admin/edit-activities/EditActivityScreen";

@@ -28,7 +28,6 @@ const { width } = Dimensions.get("window");
 const android = Platform.OS === "android" ? true : false;
 
 const NewStaffMemberFormModal = () => {
-  //----------- COMPONENT STATES --------------------
   const [isLoading, setIsLoading] = useState(false);
   const [rolesMultiSelectExpanded, setRolesMultiSelectExpanded] =
     useState(false);
@@ -41,15 +40,10 @@ const NewStaffMemberFormModal = () => {
     };
   });
 
-  //----------- COMPONENT FUNCTIONS -----------------
-
-  //------------- COMPONENT RETURN ----------------------------
-
   return (
     <Modal
       animationType="slide"
       visible={appContext.states.isStaffModalVisible}
-      //presentationStyle="fullScreen"
       transparent
     >
       <KeyboardAvoidingView
@@ -192,25 +186,6 @@ const NewStaffMemberFormModal = () => {
                     );
                   }}
                 />
-                {/* isExpanded={rolesMultiSelectExpanded}
-                      //keyIdentifier={3}
-                      setExpandedState={() =>
-                        setRolesMultiSelectExpanded(!rolesMultiSelectExpanded)
-                      }
-                      items={roles}
-                      selectedItems={selectedRoles}
-                      containerStyles={{ width: "100%" }}
-                      buttonContainerStyles={styles.rolesButtonContainer}
-                      buttonStyles={styles.rolesButton}
-                      buttonTextStyles={styles.rolesButtonTextStyles}
-                      itemStyles={styles.rolesItems}
-                      buttonText={`Roles: ${data.roles}`}
-                      sendDataToParent={(data) => {
-                        setFieldValue(
-                          "roles",
-                          data.map((i) => i.label)
-                        );
-                      }} */}
                 <View style={styles.bottomWrapper}>
                   <TouchableOpacity
                     style={styles.submitBtn}

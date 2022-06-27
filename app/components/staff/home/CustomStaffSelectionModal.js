@@ -18,12 +18,7 @@ const { width } = Dimensions.get("window");
 const android = Platform.OS === "android" ? true : false;
 
 const CustomStaffSelectionModal = () => {
-  //----------- COMPONENT STATES --------------------
   const appContext = useContext(AppContext);
-
-  //----------- COMPONENT FUNCTIONS -----------------
-
-  //------------- COMPONENT RETURN ----------------------------
   return (
     <Modal
       animationType="fade"
@@ -67,24 +62,18 @@ const styles = StyleSheet.create({
     backgroundColor: "#a593a0",
   },
   modalView: {
-    //backgroundColor: "rgb(242,242,242)",
     width: width * 0.8,
   },
   topWrapper: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    //alignItems: "flex-start",
-    //marginBottom: 5,
     backgroundColor: "#e6e6e6",
     padding: 10,
     height: 60,
     width: "100%",
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4,
-    //borderTopWidth: 1,
-    //borderRightWidth: 1,
-    //borderLeftWidth: 1,
     borderColor: "dodgerblue",
   },
   labelText: {
@@ -98,16 +87,11 @@ const styles = StyleSheet.create({
     opacity: 0,
   },
   list: {
-    //justifyContent: "center",
-    //alignItems: "stretch",
     maxHeight: 500,
     backgroundColor: "whitesmoke",
     width: "100%",
     borderBottomLeftRadius: 4,
     borderBottomRightRadius: 4,
-    //borderBottomWidth: 1,
-    //borderLeftWidth: 1,
-    //borderRightWidth: 1,
     borderColor: "dodgerblue",
     padding: 2,
   },

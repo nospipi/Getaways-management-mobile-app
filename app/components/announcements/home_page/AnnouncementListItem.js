@@ -11,9 +11,6 @@ import {
 import { AntDesign, Feather } from "@expo/vector-icons";
 import { useState } from "react";
 import moment from "moment-timezone";
-//new Date(date).toLocaleString("en-US", { month: "short" }) NOT WORKING IN ANDROID
-
-//--------------- IMPORT COMPONENTS ----------------------------
 
 //--------------------------------------------------------------
 

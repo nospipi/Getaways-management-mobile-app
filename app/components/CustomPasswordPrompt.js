@@ -29,7 +29,6 @@ const { width } = Dimensions.get("window");
 //--------------------------------------------------------------
 
 const CustomPasswordPrompt = () => {
-  //----------- COMPONENT STATES --------------------
   const navigation = useNavigation();
   const dispatch = useDispatch();
 
@@ -137,7 +136,7 @@ const CustomPasswordPrompt = () => {
     setUserNameValue("");
   }, [isPasswordModalVisible]);
 
-  //------------- COMPONENT RETURN ----------------------------
+  //---------------------------------------------------------
 
   return (
     <Modal

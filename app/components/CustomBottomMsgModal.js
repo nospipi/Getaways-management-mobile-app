@@ -57,24 +57,6 @@ const CustomBottomMsgModal = () => {
     }),
   };
 
-  // const slideModal = {
-  //   transform: [
-  //     {
-  //       translateY: slider.interpolate({
-  //         inputRange: [0, 0],
-  //         outputRange: [0, -20],
-  //       }),
-  //     },
-  //   ],
-  // };
-
-  // const slideModal = {
-  //   height: slider.interpolate({
-  //     inputRange: [0, 1],
-  //     outputRange: [0, 100],
-  //   }),
-  // };
-
   useEffect(() => {
     appContext.states.isMsgModalVisible.isVisible ? slideIn() : slideOut();
   }, [appContext.states.isMsgModalVisible.isVisible]);
@@ -97,15 +79,9 @@ const CustomBottomMsgModal = () => {
           { opacity: appContext.states.isMsgModalVisible.isVisible ? 1 : 0 },
         ]}
       >
-        {/* <Ionicons name="md-notifications-sharp" size={22} color="whitesmoke" /> */}
         <Text style={styles.modalText}>
           {appContext.states.isMsgModalVisible.msg}
         </Text>
-        {/* <FontAwesome
-          name={`${success ? "check" : "exclamation"}`}
-          size={20}
-          color="whitesmoke"
-        /> */}
       </View>
     </Animated.View>
   );
@@ -124,18 +100,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     alignSelf: "center",
     width: width,
-    //borderTopWidth: 1,
-    //borderLeftWidth: 1,
-    //borderRightWidth: 1,
     borderColor: "white",
-    //borderTopLeftRadius: 5,
-    //borderTopRightRadius: 5,
-    //height: 60,
     paddingVertical: 20,
     paddingHorizontal: 5,
-    //minHeight: 50,
-
-    //bottom: 0,
   },
   modalContainer: {
     flexDirection: "row",
@@ -147,7 +114,6 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     textAlign: "center",
     alignSelf: "center",
-    //paddingHorizontal: 5,
     fontFamily: android ? "Roboto" : "Avenir",
     color: "whitesmoke",
   },

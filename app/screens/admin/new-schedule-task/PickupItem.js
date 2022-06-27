@@ -8,7 +8,7 @@ import {
   MaterialIcons,
 } from "@expo/vector-icons";
 import moment from "moment-timezone";
-import { useContext, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import {
   Platform,
   ScrollView,
@@ -17,9 +17,6 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import AppContext from "../../../components/AppContext";
-
-//--------------- IMPORT COMPONENTS ----------------------------
 
 //--------------------------------------------------------------
 
@@ -27,7 +24,6 @@ const android = Platform.OS === "android" ? true : false;
 
 const PickupItem = ({ data, index, showEditModal, deleteThis }) => {
   const [componentWidth, setComponentWidth] = useState(0);
-  const appContext = useContext(AppContext);
   const scrollRef = useRef();
 
   return (
@@ -253,7 +249,6 @@ const styles = StyleSheet.create({
     flex: 1,
     marginBottom: 3,
     flexDirection: "row",
-    //paddingVertical: 4,
     padding: 4,
     backgroundColor: `white`,
     borderRadius: 3,
@@ -262,9 +257,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 3,
     elevation: 3,
-    //height: 105,
-    //alignItems: "center",
-    //height: 140,
   },
 
   leftView: {
@@ -273,31 +265,19 @@ const styles = StyleSheet.create({
     backgroundColor: "whitesmoke",
     borderRadius: 3,
     paddingVertical: 4,
-    //left: 10,
-    //marginRight: 2,
   },
   editView: {
-    //width: 200,
-    //flex: 1,
     flexDirection: "row",
-    // position: "absolute",
-    //backgroundColor: "#80bfff",
     borderWidth: 1,
     borderColor: "#e6e6e6",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 3,
     marginLeft: 4,
-    //paddingHorizontal: 20,
-    //paddingVertical: 10,
-    //width: 50,
-    // height: "100%",
   },
   editViewButtonContainer: {
     backgroundColor: "#f2f2f2",
     justifyContent: "center",
-    //borderWidth: 1,
-    //borderColor: "#e6e6e6",
     alignItems: "center",
     margin: 5,
     padding: 10,
@@ -313,7 +293,6 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: android ? "Roboto" : "Avenir",
     fontSize: 16,
-    //textTransform: "capitalize",
     fontWeight: "600",
   },
 });

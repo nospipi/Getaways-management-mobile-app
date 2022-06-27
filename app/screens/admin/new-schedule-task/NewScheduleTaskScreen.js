@@ -16,46 +16,30 @@ import {
   View,
 } from "react-native";
 import { DatePicker, Picker } from "react-native-woodpicker";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { addTask, editTask } from "../../../../src/api/api";
-import CustomBottomMsgModal from "../../../components/CustomBottomMsgModal";
-
-//---------------- IMPORT COMPONENTS --------------------------
-
-import * as constants from "../../../../constants";
 import AppContext from "../../../components/AppContext";
+import CustomBottomMsgModal from "../../../components/CustomBottomMsgModal";
 import AddPickupsModal from "./AddPickupsModal";
 import PickupItem from "./PickupItem";
 import SelectCrewModal from "./SelectCrewModal";
-
-//---------------- IMPORT FUNCTIONS --------------------------
 
 //------------------------------------------------------------
 
 const android = Platform.OS === "android" ? true : false;
 
 const NewScheduleTaskScreen = ({ route }) => {
-  const currentUser = useSelector((store) => store.data.currentUser);
   const navigation = useNavigation();
   const [isLoading, setIsLoading] = useState(false);
   const [isTaskDetailsShown, setIsTaskDetailsShown] = useState(
     route.params.data.details ? true : false
   );
   const [isCrewModalVisible, setIsCrewModalVisible] = useState(false);
-  //const [isPickupsModalVisible, setPickupsModalVisible] = useState(false);
   const [pickupsModalData, setPickupsModalData] = useState({
     isVisible: false,
   });
-  const [pickupIndex, setPickupIndex] = useState(1);
-  //TODO NEW task pickups fix time
   const appContext = useContext(AppContext);
-  const dispatch = useDispatch();
   const store = useSelector((store) => store);
-  const staff = store.data.entities.staff
-    .filter((staffMember) => staffMember._id !== constants.ADMIN_ID)
-    .map((staffMember) => {
-      return { label: staffMember.name, value: staffMember._id };
-    });
   const activities = store.data.entities.activities.map((activity) => {
     return { label: activity.type, value: activity._id };
   });
@@ -180,12 +164,6 @@ const NewScheduleTaskScreen = ({ route }) => {
                       });
                     }
                   }}
-                  //onDonePress={(data) => setSelectedMember(1)}
-                  //placeholder={"Select a member.."}
-                  //isNullable
-                  //backdropAnimation={{ opacity: 0 }}
-                  //mode="dropdown"
-                  //disable
                   containerStyle={{
                     flex: 1,
                     justifyContent: "center",
@@ -206,7 +184,6 @@ const NewScheduleTaskScreen = ({ route }) => {
                       padding: 4,
                       justifyContent: "center",
                       alignItems: "center",
-                      //backgroundColor: "lightblue",
                     }}
                     onPress={() => {
                       setFieldValue("activity", null);
@@ -251,18 +228,6 @@ const NewScheduleTaskScreen = ({ route }) => {
                     ...styles.textInputStyle,
                     opacity: values.date ? 1 : 0.4,
                   }}
-                  //isNullable
-
-                  //iosDisplay="inline"
-                  //backdropAnimation={{ opacity: 0 }}
-                  //minimumDate={new Date(Date.now())}
-                  //maximumDate={new Date(Date.now()+2000000000)}
-                  //iosMode="date"
-                  //androidMode="countdown"
-                  //iosDisplay="spinner"
-                  //androidDisplay="calendar"
-                  //androidDisplay="spinner"
-                  //locale="fr"
                 />
                 {values.date ? (
                   <Pressable
@@ -310,12 +275,6 @@ const NewScheduleTaskScreen = ({ route }) => {
                       });
                     }
                   }}
-                  //onDonePress={(data) => setSelectedMember(1)}
-                  //placeholder={"Select a member.."}
-                  //isNullable
-                  //backdropAnimation={{ opacity: 0 }}
-                  //mode="dropdown"
-                  //disable
                   containerStyle={{
                     flex: 1,
                     justifyContent: "center",
@@ -336,7 +295,6 @@ const NewScheduleTaskScreen = ({ route }) => {
                       padding: 4,
                       justifyContent: "center",
                       alignItems: "center",
-                      //backgroundColor: "lightblue",
                     }}
                     onPress={() => {
                       setFieldValue("vehicle", null);
@@ -470,8 +428,6 @@ const NewScheduleTaskScreen = ({ route }) => {
                 >
                   <Pressable
                     style={{
-                      // position: "absolute",
-                      // left: "90%",
                       flex: 1,
                       padding: 4,
                       justifyContent: "center",
@@ -480,7 +436,6 @@ const NewScheduleTaskScreen = ({ route }) => {
                       alignItems: "center",
                       backgroundColor: "white",
                       alignItems: "center",
-                      //backgroundColor: "lightblue",
                     }}
                     onPress={() => {
                       setFieldValue("details", null);
@@ -583,12 +538,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#a593a0",
     padding: 5,
   },
-  TopContainer: {
-    //flex: 1,
-    // maxHeight: 300,
-  },
+  TopContainer: {},
   formRow: {
-    //backgroundColor: "grey",
     flex: 1,
     width: "100%",
     justifyContent: "center",
@@ -604,14 +555,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "white",
   },
-  pickupsContainer: {
-    //marginTop: 2,
-  },
+  pickupsContainer: {},
   touchableStyle: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    //backgroundColor: "indianred",
     height: "100%",
   },
   textInputStyle: {
@@ -624,23 +572,13 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     textAlign: "center",
-    //borderRadius: 5,
     borderColor: "#333333",
-    //backgroundColor: "white",
-    //borderTopWidth: 0.5,
-    //borderBottomWidth:0.5,
-    //padding: 10,
-    //borderColor: "rgba(0, 0, 0, 0.2)",
-    //borderWidth: 0.6,
-    //fontSize: 15,
   },
   textInput: {
     flex: 1,
-    // borderRadius: 4,
     backgroundColor: "white",
     padding: 10,
     borderColor: "rgba(0, 0, 0, 0.2)",
-    //borderWidth: 1,
     fontSize: 15,
     height: "100%",
     width: "100%",
@@ -652,12 +590,6 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     alignSelf: "center",
     fontFamily: android ? "Roboto" : "Avenir",
-    //backgroundColor: "#bfbfbf",
-    //width: "100%",
-    //textAlign: "center",
-    //padding: 5,
-    //borderTopStartRadius: 4,
-    //borderTopEndRadius: 4,
   },
   bottomWrapper: {
     flexDirection: "row",
@@ -665,21 +597,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
 
     height: 50,
-    //width: "100%",
-    //height: 40,
-    //padding: 10,
   },
   clearBtn: {
     justifyContent: "center",
     alignItems: "center",
     flex: 1,
     backgroundColor: "#d9d9d9",
-    //borderRadius: 4,
-    //borderRightWidth: 1,
     borderColor: "whitesmoke",
     borderBottomLeftRadius: 4,
     borderTopLeftRadius: 4,
-    //borderBottomRightRadius: 4,
     height: "100%",
   },
   clearText: {
@@ -694,13 +620,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flex: 2,
     backgroundColor: "#bfbfbf",
-    //borderRadius: 4,
-    //borderBottomLeftRadius: 4,
     borderBottomRightRadius: 4,
     borderTopRightRadius: 4,
     height: "100%",
-    //backgroundColor: "rgb(220, 220, 220)",
-    //width: "25%",
-    //padding: 4,
   },
 });

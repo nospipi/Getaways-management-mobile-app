@@ -1,3 +1,4 @@
+//--------------- IMPORT MODULES ----------------------------
 import { useNavigation } from "@react-navigation/native";
 import { useContext } from "react";
 import {
@@ -8,6 +9,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 import AppContext from "./AppContext";
+
+//--------------------------------------------------------------
 
 const android = Platform.OS === "android" ? true : false;
 

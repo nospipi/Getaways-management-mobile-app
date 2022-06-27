@@ -1,20 +1,13 @@
 //--------------- IMPORT MODULES ----------------------------
 
 import { StyleSheet, View } from "react-native";
-
 import { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
-//---------------- IMPORT COMPONENTS --------------------------
-
 import AppContext from "../components/AppContext";
 import CustomButton from "../components/CustomButton";
 import CustomAdminModal from "../components/CustomOptionsModal";
 import TopLogoContainer from "../components/top_logos/TopLogoContainer";
 import LoadingScreen from "./LoadingScreen";
-
-//---------------- IMPORT FUNCTIONS --------------------------
-
 import { setNotificationsToken } from "../../src/api/api";
 
 //------------------------------------------------------------
@@ -31,7 +24,6 @@ const StaffScreen = ({
   const currentUser = useSelector((store) => store.data.currentUser);
   const appContext = useContext(AppContext);
   const dispatch = useDispatch();
-  //console.log(navigation);
   useEffect(() => {
     setNotificationsToken(currentUser._id, dispatch);
   }, []);
@@ -65,10 +57,8 @@ const styles = StyleSheet.create({
   OuterContainer: {
     flex: 1,
     backgroundColor: "#a593a0",
-    //marginTop: android ? StatusBar.currentHeight + 10 : 10, //for ios its under SafeAreaView
   },
   InnerContainer: {
-    //backgroundColor: "red",
     justifyContent: "space-between",
     padding: 6,
     flex: 1,

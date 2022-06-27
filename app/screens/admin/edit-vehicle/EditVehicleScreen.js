@@ -10,15 +10,10 @@ import {
   View,
 } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-
-//---------------- IMPORT COMPONENTS --------------------------
-
 import AppContext from "../../../components/AppContext";
 import CustomBottomMsgModal from "../../../components/CustomBottomMsgModal";
 import EditVehicleListItem from "./EditVehicleListItem";
 import NewVehicleFormModal from "./NewVehicleFormModal";
-
-//---------------- IMPORT FUNCTIONS --------------------------
 
 //------------------------------------------------------------
 
@@ -39,12 +34,6 @@ const EditVehicleScreen = () => {
       }),
       {}
     )
-    //EXAMPLE BELOW
-    // Object {
-    //   "6212c140d9860a411f13783f": false,
-    //   "6212c140d9860a411f13843f": false,
-    //   "6212c140d9860a411f19743f": false,
-    // } MAKE OBJECT FOR EVERY MEMBER WITH ID AS KEY
   );
 
   const setNewExpandedState = (id, state) => {
@@ -91,10 +80,8 @@ const styles = StyleSheet.create({
   OuterContainer: {
     flex: 1,
     backgroundColor: "#a593a0",
-    //marginTop: android ? StatusBar.currentHeight + 10 : 10, //for ios its under SafeAreaView
   },
   InnerContainer: {
-    //backgroundColor: "red",
     padding: 6,
     flex: 1,
   },

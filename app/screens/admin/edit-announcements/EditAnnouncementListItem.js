@@ -15,8 +15,6 @@ import { useDispatch } from "react-redux";
 import { deleteAnnouncement } from "../../../../src/api/api";
 import AppContext from "../../../components/AppContext";
 
-//--------------- IMPORT COMPONENTS ----------------------------
-
 //--------------------------------------------------------------
 
 const android = Platform.OS === "android" ? true : false;
@@ -76,14 +74,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    //backgroundColor: "lightgrey",
-    //padding: 4,
-    //paddingHorizontal: 10,
     height: 60,
-    //borderRadius: 6,
     marginBottom: 2,
-    //borderBottomWidth: expanded ? 1 : null,
-    //borderBottomColor: "black",
   },
   trashContainer: {
     justifyContent: "center",
@@ -103,8 +95,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     height: "100%",
     flex: 4,
-    //borderTopRightRadius: 5,
-    //borderBottomRightRadius: 5,
   },
 
   textContainer: {
@@ -118,9 +108,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   dateContainer: {
-    //flex: 1,
     borderLeftWidth: 1,
-    //backgroundColor: "red",
     paddingLeft: 10,
     justifyContent: "center",
     height: "80%",

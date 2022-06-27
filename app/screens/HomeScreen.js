@@ -13,16 +13,10 @@ import {
   View,
 } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-
-//---------------- IMPORT COMPONENTS -------------------------
-
 import AnnouncementContainer from "../components/announcements/home_page/Announcements";
 import CustomPasswordPrompt from "../components/CustomPasswordPrompt";
 import CustomStaffSelectionModal from "../components/staff/home/CustomStaffSelectionModal";
 import TopLogoContainer from "../components/top_logos/TopLogoContainer";
-
-//---------------- IMPORT FUNCTIONS ---------------------------
-
 import { fetchEntities } from "../../src/api/api";
 import { TOGGLE_IS_LOADING } from "../../src/store/store";
 import AppContext from "../components/AppContext";

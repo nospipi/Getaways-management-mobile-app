@@ -19,8 +19,6 @@ import { deleteStaffMember, editStaffMember } from "../../../../src/api/api";
 import AppContext from "../../../components/AppContext";
 import DropdownMultiSelect from "../../../components/DropdownMultiSelect";
 
-//--------------- IMPORT COMPONENTS ----------------------------
-
 //--------------------------------------------------------------
 //TODO make delete to need confirmation
 const android = Platform.OS === "android" ? true : false;
@@ -158,13 +156,9 @@ const EditStaffListItem = ({ data, expanded, setNewExpandedState }) => {
     input: {
       flex: 1,
       textAlign: "center",
-      //borderRadius: 5,
       borderColor: "#333333",
       backgroundColor: "white",
       padding: 10,
-      //borderColor: "rgba(0, 0, 0, 0.2)",
-      //borderWidth: 1,
-      //fontSize: 15,
     },
     icons: {
       flexDirection: "row",
@@ -176,7 +170,6 @@ const EditStaffListItem = ({ data, expanded, setNewExpandedState }) => {
       justifyContent: "center",
       alignItems: "center",
       backgroundColor: "white",
-      //borderWidth: 1,
       borderColor: "#333333",
       borderBottomLeftRadius: 6,
       height: "100%",
@@ -184,8 +177,6 @@ const EditStaffListItem = ({ data, expanded, setNewExpandedState }) => {
       marginRight: 2,
     },
     cancelContainer: {
-      //borderWidth: 1,
-      //borderRadius: 2,
       justifyContent: "center",
       alignItems: "center",
       height: "100%",
@@ -202,8 +193,6 @@ const EditStaffListItem = ({ data, expanded, setNewExpandedState }) => {
       color: "#1a1a00",
     },
     checkContainer: {
-      //borderWidth: 1,
-      //borderRadius: 2,
       justifyContent: "center",
       alignItems: "center",
       height: "100%",
