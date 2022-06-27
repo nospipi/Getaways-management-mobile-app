@@ -1,20 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import * as SplashScreen from "expo-splash-screen";
+import { StatusBar } from "expo-status-bar";
+import { initializeApp } from "firebase/app";
+import { useEffect } from "react";
+import { LogBox } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { Provider } from "react-redux";
+import App from "./app/components/App";
+import { firebaseConfig } from "./firebase";
+import { store } from "./src/store/store";
+LogBox.ignoreLogs(["Setting a timer"]); // this disables a warning when uploading large images in firebase in NewBalanceTransaction component
+initializeApp(firebaseConfig);
 
-export default function App() {
+const Main = () => {
+  useEffect(() => {
+    SplashScreen.preventAutoHideAsync();
+    setTimeout(() => {
+      SplashScreen.hideAsync();
+    }, 2000);
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <NavigationContainer>
+        <SafeAreaProvider style={{ flex: 1 }}>
+          <StatusBar style="dark" />
+          <App />
+        </SafeAreaProvider>
+      </NavigationContainer>
+    </Provider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default Main;

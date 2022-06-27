@@ -1,32 +1,48 @@
 {
   "expo": {
-    "name": "Getaways",
-    "slug": "Getaways",
-    "version": "1.0.0",
+    "name": "Getaways Management",
+    "slug": "Getaways-Management",
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you upload photos when its required.",
+          "cameraPermission": "The app accesses your device camera to let you upload photos when its required."
+        }
+      ]
+    ],
+    "version": "1.2.3",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./app/assets/ios_app_icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./app/assets/splash_logo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#a593a0"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "requireFullScreen": true,
+      "bundleIdentifier": "com.nospipi.GetawaysManagement",
+      "buildNumber": "1.2.3",
+      "icon": "./app/assets/ios_app_icon.png"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "foregroundImage": "./app/assets/getaways_adaptive_icon.png",
+        "backgroundColor": "#edeae6"
+      },
+      "package": "com.nospipi.GetawaysManagement",
+      "versionCode": 23,
+      "googleServicesFile": "./google-services.json",
+      "softwareKeyboardLayoutMode": "pan"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./app/assets/getaways_adaptive_icon.png"
+    },
+    "description": ""
   }
 }

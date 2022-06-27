@@ -1,5 +1,7 @@
 node_modules/
 .expo/
+*.expo-shared/
+.vscode
 dist/
 npm-debug.*
 *.jks
@@ -9,6 +11,12 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+constants.js
+firebase.js
+google-services.json
+app.json
+TODOS.txt
+.env.local
 
 # macOS
 .DS_Store
