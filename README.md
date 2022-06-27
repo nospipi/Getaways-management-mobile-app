@@ -7,8 +7,5 @@ Mobile app which provides helpfull tools in order to help organizing the workflo
 
  React-native
 
-
-
-
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![splash_logo](https://user-images.githubusercontent.com/62842853/175918249-5a48e05c-e3da-437a-a047-fd8abdc8845b.png)
 
